@@ -14,7 +14,8 @@ namespace DragonSlayer2._0
             Greeting();
             Game game = new Game();
             game.PlayGame();
-
+            AddHighScore(game.Player.PlayerHealth);
+            DisplayHighScore();
         }
         static void Greeting()
         {
@@ -27,6 +28,50 @@ namespace DragonSlayer2._0
             Console.WriteLine("<<You enter the dungeon and you are imediatley attacked by one of the undead soldiers, time to make your move>>");
             Console.ReadLine();
         }
-        
+        static void AddHighScore(int playerScore)
+        {
+            Console.WriteLine("Your Name: ");
+            string playerName = Console.ReadLine();
+
+            //Create connection to database
+            TylerEntities db = new TylerEntities();
+
+            //New HighScore Object must create new instance of an Object
+            HighScore newHighScore = new HighScore();
+            //populate the object
+            newHighScore.Date = DateTime.Now;
+            newHighScore.Game = "Dragon Slayer2";
+            newHighScore.PlayerName = playerName;
+            newHighScore.Score = playerScore;
+
+            //add it to the database
+            db.HighScores.Add(newHighScore);
+            //now it's set up but not in the database yet
+            //Nothing happens until you save
+            db.SaveChanges();
+
+
+        }
+        static void DisplayHighScore()
+        {
+            //clear the console
+            Console.Clear();
+            //Write the High Score Text
+            
+            Console.WriteLine("============================= DRAGON SLAYER HIGH SCORE =============================");
+            
+            //create a new connection to the database
+            TylerEntities db = new TylerEntities();
+
+            //get the HS list
+            List<HighScore> highScoreList = db.HighScores.Where(x => x.Game == "Dragon Slayer2").OrderByDescending(x => x.Score).Take(10).ToList();
+            
+            foreach (HighScore highScore in highScoreList)
+            {
+                Console.WriteLine("{0}, {1} - {2}", highScoreList.IndexOf(highScore) + 1, highScore.PlayerName, highScore.Score);
+            }
+            
+
+        }
     }
 }

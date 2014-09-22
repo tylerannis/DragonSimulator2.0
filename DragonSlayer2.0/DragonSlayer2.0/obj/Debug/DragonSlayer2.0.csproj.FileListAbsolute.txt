@@ -4,3 +4,5 @@ C:\Users\Technologist\Documents\GitHub\DragonSimulator2.0\DragonSlayer2.0\Dragon
 C:\Users\Technologist\Documents\GitHub\DragonSimulator2.0\DragonSlayer2.0\DragonSlayer2.0\obj\Debug\DragonSlayer2.0.csprojResolveAssemblyReference.cache
 C:\Users\Technologist\Documents\GitHub\DragonSimulator2.0\DragonSlayer2.0\DragonSlayer2.0\obj\Debug\DragonSlayer2.0.exe
 C:\Users\Technologist\Documents\GitHub\DragonSimulator2.0\DragonSlayer2.0\DragonSlayer2.0\obj\Debug\DragonSlayer2.0.pdb
+C:\Users\Technologist\Documents\GitHub\DragonSimulator2.0\DragonSlayer2.0\DragonSlayer2.0\bin\Debug\EntityFramework.dll
+C:\Users\Technologist\Documents\GitHub\DragonSimulator2.0\DragonSlayer2.0\DragonSlayer2.0\bin\Debug\EntityFramework.xml
