@@ -24,7 +24,7 @@ namespace DragonSlayer2._0
             Console.WriteLine("<<Press enter to start the game>>");
             Console.ReadLine();
             Console.WriteLine("<<You enter the dungeon and you are imediatley attacked by one of the undead soldiers, time to make your move>>");
-            Console.ReadLine();
+            
         }
     }
 }
